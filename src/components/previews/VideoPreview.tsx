@@ -3,7 +3,6 @@ import type { OdFileObject } from '../../types'
 import { FC, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import type Plyr from 'plyr'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 import Plyr from 'plyr-react'
@@ -64,8 +63,8 @@ const VideoPlayer: FC<{
     tracks: [{ kind: 'captions', label: videoName, src: '', default: true }],
   }
   const plyrOptions: Plyr.Options = {
-  ratio: `${width ?? 16}:${height ?? 9}`,
-  fullscreen: { iosNative: true },
+    ratio: `${width ?? 16}:${height ?? 9}`,
+    fullscreen: { iosNative: true },
   }
   if (!isFlv) {
     // If the video is not in flv format, we can use the native plyr and add sources directly with the video URL
